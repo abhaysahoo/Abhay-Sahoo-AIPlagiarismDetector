@@ -31,7 +31,7 @@ export class SentenceExtractionService {
         const sentenceArray = splitIntoSentences(fileText); // splits text into sentences and returns an array of sentences
 
         if(sentenceArray.length === 0) {
-            throw new Error("No text in provided file");
+            throw new BadRequestError("No text in provided file");
         }
 
         return sentenceArray;

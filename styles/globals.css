@@ -67,4 +67,10 @@
   .wrapper {
     @apply w-full max-w-6xl mx-auto px-4 sm:px-8 py-4;
   }
+
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
 }
