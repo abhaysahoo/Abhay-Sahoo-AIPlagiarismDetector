@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const FeatureCard = ({ title, icon, altText, description }) => {
   return (
-    <div className='border-2 border-border min-h-[200px] hover:shadow-md rounded-lg p-4 flex items-start justify-start gap-2'>
+    <div className='border-2 border-border min-h-[250px] hover:shadow-md rounded-lg p-4 flex items-start justify-start gap-2'>
       <div className='basis-1/5'>
         <Image
           src={icon}
@@ -18,7 +18,7 @@ const FeatureCard = ({ title, icon, altText, description }) => {
       </div>
       <div className='basis-4/5'>
         <p className='text-lg font-bold text-stone-secondary'>{title}</p>
-        <p className='text-stone-primary mt-2'>{description}</p>
+        <p className='text-stone-secondary text-base mt-2'>{description}</p>
       </div>
     </div>
   )

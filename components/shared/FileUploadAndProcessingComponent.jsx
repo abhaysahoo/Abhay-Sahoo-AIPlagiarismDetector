@@ -11,6 +11,7 @@ const FileUploadAndProcessingComponent = ({ setPlagiarismReport, setLoadingResul
     const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
         if (rejectedFiles.length !== 0) {
             setError('Only .pdf or .docx file with size less than 50mb will be accepted');
+            return;
         }
 
         if (acceptedFiles.length === 0) return; // No files accepted
