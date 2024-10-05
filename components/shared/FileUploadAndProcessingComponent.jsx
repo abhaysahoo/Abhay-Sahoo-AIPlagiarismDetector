@@ -76,7 +76,7 @@ const FileUploadAndProcessingComponent = ({ setPlagiarismReport, setLoadingResul
                 <input {...getInputProps()} />
                 {
                     fileName ? (
-                        <div className='text-stone-primary'>
+                        <div className='text-stone-primary overflow-hidden'>
                             <p>Selected file: {fileName.name}</p>
                             <p>Click here again to replace</p>
                         </div>
