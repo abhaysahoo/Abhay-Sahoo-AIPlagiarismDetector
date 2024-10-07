@@ -35,8 +35,8 @@ export class PlagiarismCheckerService {
 
             const { st, ed } = plagiarismInfo;
 
-            // If there's plagiarized content, calculate its length and add to plagiarizedChars
-            if (st >= 0 && ed >= 0) {
+            // Ensure the plagiarism indices are valid before calculating plagiarized characters
+            if (st >= 0 && ed >= st && ed < sentenceLength) {
                 plagiarizedChars += (ed - st + 1);  // Number of plagiarized characters
             }
         });
