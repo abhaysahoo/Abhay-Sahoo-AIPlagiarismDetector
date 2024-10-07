@@ -5,9 +5,11 @@ export class PlagiarismCheckerService {
     async checkPlagiarism(file) {
         try {
             const sentenceExtractionService = new SentenceExtractionService();
+            console.log("Extracting sentences from the file text...");
             const sentences = await sentenceExtractionService.getSentenceArray(file);
 
             const openAIWrapperService = new OpenAIWrapperService();
+            console.log("Calling API wrapper to process all sentences...");
             const result = await openAIWrapperService.processSentencesWithAI(sentences);
 
             const plagiarismPercentage = this.#calculatePlagiarismPercentage(result);

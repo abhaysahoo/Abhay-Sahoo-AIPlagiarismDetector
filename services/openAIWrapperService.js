@@ -7,6 +7,7 @@ const openai = new OpenAI();
 
 export class OpenAIWrapperService {
     async processSentencesWithAI(sentenceArray) {
+        console.log("Chuncking all sentences into batches...");
         const batchesArray = this.#chunkArray(sentenceArray, 5); // splitting sentences into batches of 5
         const responses2dArray = [];
 
@@ -15,6 +16,7 @@ export class OpenAIWrapperService {
             const currentBatchGroup = batchesArray.slice(i, i + 4); // Get the next 4 batches
 
             // Process the 4 batches concurrently with retry logic
+            console.log("Processing 4 batches concurrently...");
             const batchResponses = await Promise.all(
                 currentBatchGroup.map(batch => retryWithBackoff(async () => await this.#processBatch(batch), 3))
             );

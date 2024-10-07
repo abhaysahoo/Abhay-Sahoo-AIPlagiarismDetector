@@ -6,6 +6,7 @@ export async function POST(req, res) {
     try {
 
         const requestValidationService = new RequestValidationService();
+        console.log('Validating request and getting file...')
         const file = await requestValidationService.validateRequestAndGetFile(req);
         // console.log(file);
         
