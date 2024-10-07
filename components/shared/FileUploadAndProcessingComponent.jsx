@@ -43,8 +43,11 @@ const FileUploadAndProcessingComponent = ({ setPlagiarismReport, setLoadingResul
             if (!response.ok) {
                 if (response.status === 504) {
                     setError("Server Timeout due to longer processing time. Currently, we don't have the computing resources to process larger files.");
-                } else
-                setError(result.message);
+                } else {
+                    setError(result.message);
+                }
+
+                return;     
             }
 
             // console.log(result.message);
