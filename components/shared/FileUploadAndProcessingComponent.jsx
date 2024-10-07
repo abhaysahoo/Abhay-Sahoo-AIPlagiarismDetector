@@ -46,12 +46,10 @@ const FileUploadAndProcessingComponent = ({ setPlagiarismReport, setLoadingResul
                 } else {
                     setError(result.message);
                 }
-
-                return;     
-            }
-
-            // console.log(result.message);
-            setPlagiarismReport(result.plagiarismReport);
+            } else {
+                // console.log(result.message);
+                setPlagiarismReport(result.plagiarismReport);
+            }   
         } catch (error) {
             console.error('Error while processing plagiarism check: ', error);
         } finally {
